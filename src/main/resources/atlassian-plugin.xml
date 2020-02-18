@@ -1,0 +1,48 @@
+<atlassian-plugin key="${atlassian.plugin.key}" name="${project.name}" plugins-version="2">
+    <plugin-info>
+        <description>${project.description}</description>
+        <version>${project.version}</version>
+        <vendor name="${project.organization.name}" url="${project.organization.url}" />
+        <param name="plugin-icon">images/pluginIcon.png</param>
+        <param name="plugin-logo">images/pluginLogo.png</param>
+    </plugin-info>
+
+    <!-- add our i18n resource -->
+    <resource type="i18n" name="i18n" location="demoPlugin1"/>
+    
+    <!-- add our web resources -->
+    <web-resource key="demoPlugin1-resources" name="demoPlugin1 Web Resources">
+        <dependency>com.atlassian.auiplugin:ajs</dependency>
+        
+        <resource type="download" name="demoPlugin1.css" location="/css/demoPlugin1.css"/>
+        <resource type="download" name="demoPlugin1.js" location="/js/demoPlugin1.js"/>
+        <resource type="download" name="images/" location="/images"/>
+
+        <context>demoPlugin1</context>
+    </web-resource>
+
+    <!-- admin config-->
+    <servlet key="admin-servlet" class="com.spmp.customplugin.adminui.AdminServlet">
+        <url-pattern>/demo/admin</url-pattern>
+    </servlet>
+
+    <rest key="rest" path="/demo-admin" version="1.0">
+        <description>Provides REST resources for the admin UI.</description>
+    </rest>
+
+    <web-item key="jira-menu-item" name="Demo Admin" section="system.admin/globalsettings" weight="10" application="jira">
+        <description>Link to demo-admin page.</description>
+        <label key="demo.admin.label" />
+        <link linkId="demo-admin-link">/plugins/servlet/demo/admin</link>
+    </web-item>
+
+    <!-- my project -->
+    <servlet key="my-project-servlet" class="com.spmp.customplugin.project.MyProjectServlet">
+        <url-pattern>/demo/project</url-pattern>
+    </servlet>
+    <web-item name="MyProjectNew" i18n-name-key="my-project-new.name" key="my-project-new" section="browse_link/project_new" weight="1000">
+        <description key="my-project-new.description">The MyProjectNew Plugin</description>
+        <label key="my-project-new.label"></label>
+        <link linkId="my-project-new-link">/plugins/servlet/demo/project</link>
+    </web-item>
+</atlassian-plugin>

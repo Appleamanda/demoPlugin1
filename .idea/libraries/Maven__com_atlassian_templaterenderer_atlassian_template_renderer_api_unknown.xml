@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.atlassian.templaterenderer:atlassian-template-renderer-api:unknown">
+    <CLASSES>
+      <root url="jar://D:/maven-repo/com/atlassian/templaterenderer/atlassian-template-renderer-api/unknown/atlassian-template-renderer-api-unknown.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://D:/maven-repo/com/atlassian/templaterenderer/atlassian-template-renderer-api/unknown/atlassian-template-renderer-api-unknown-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://D:/maven-repo/com/atlassian/templaterenderer/atlassian-template-renderer-api/unknown/atlassian-template-renderer-api-unknown-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
